@@ -1,0 +1,144 @@
+/* Board color 
+#8b4d34
+#d1a34d
+
+White players
+#fde9b6
+Black players
+#0e0b1c
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+
+  background-color: #6b7079;
+}
+.container {
+  position: relative;
+  padding: 3.2rem;
+}
+/* Standard size of a chess: 16 to 20 inches */
+.chess-board {
+  min-width: 40vw;
+  min-height: 40vw;
+  margin: 3.2rem auto;
+
+  border-collapse: collapse;
+  border: none;
+  overflow: hidden;
+}
+
+.chess-square {
+  border: none;
+}
+.chess-row-odd td:nth-child(odd),
+.chess-row-even td:nth-child(even) {
+  /* background-color: #a2552b; */
+  background-color: #ab6640;
+}
+.chess-row-odd td:nth-child(even),
+.chess-row-even td:nth-child(odd) {
+  background-color: #d1a34d;
+}
+
+td {
+  font-size: 5.2rem;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 7.2rem;
+  min-height: 7.2rem;
+
+  position: relative;
+}
+
+.dot::after {
+  content: '';
+
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+
+  background-color: #aaa;
+
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+}
+.capturable::before {
+  content: '';
+
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 2px #999 solid;
+  outline: 3px inherit inset;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label::after {
+  content: attr(data-content);
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  color: #ddd;
+}
+
+.x-label::before {
+  content: attr(data-content-x);
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  color: #ddd;
+}
+.active {
+  background-color: #ff3 !important;
+}
+.error {
+  background-color: red !important;
+}
+.hidden button {
+  opacity: 0;
+  visibility: none;
+  pointer-events: none;
+}
+.pawn-promotion button {
+  font-size: 5.2rem;
+  display: inline-flex;
+  padding: 0.8rem;
+}
+.pawn-promotion {
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pawn-promotion--var {
+  top: 100%;
+}
+.hidden {
+  display: none;
+}

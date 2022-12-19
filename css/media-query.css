@@ -1,0 +1,23 @@
+@media (max-width: 600px) {
+  .chess-board {
+    width: 0.9vw;
+    height: 1vh;
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    padding: 0;
+  }
+  td {
+    font-size: 4.2rem;
+    padding: 5px;
+  }
+  .container {
+    border: none;
+    margin: 0 auto;
+  }
+  .label::after,
+  .x-label::before {
+    font-size: 0.7rem;
+  }
+}
